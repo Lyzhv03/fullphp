@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SendMailController;
 use App\Http\Middleware\AdminMiddlware;
 use App\Http\Middleware\CheckTokenMiddleware;
 use Illuminate\Support\Facades\DB;
@@ -133,3 +134,7 @@ Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
 Route::get('/register',[LoginController::class,'register'])->name('register');
 Route::post('/register',[LoginController::class,'postRegister'])->name('postRegister');
+
+
+//Sendmail
+Route::get('sendmail',[SendMailController::class,'sendMail']);
